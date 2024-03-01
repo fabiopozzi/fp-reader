@@ -1,0 +1,6 @@
+# RSS reader
+
+* creata struttura tabelle (feeds, feed_items)
+* inserimento manuale elementi in tabella feeds
+* iterazione su ognuno dei feed, ogni articolo viene scaricato ed inserito nel DB come feed_item
+* evito di inserire duplicati con UNIQUE su hash item e INSERT OR IGNORE all'inserimento
