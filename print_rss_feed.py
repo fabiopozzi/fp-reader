@@ -28,7 +28,7 @@ def processrss(feed_id, url, feed_title):
             published = entry.get("published_parsed")
             published = strftime("%Y-%m-%d %H:%M:%S", published)
             date_updated = datetime.now()
-            query = (f"INSERT INTO feed_items (title, url, urlhash, content, feed_title, published_date, last_updated, feed_id)"
+            query = (f"INSERT OR IGNORE INTO feed_items (title, url, urlhash, content, feed_title, published_date, last_updated, feed_id)"
                      f"VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
             cur.execute(query, (title, link, urlhash.hexdigest(), description, feed_title, published, date_updated, feed_id))
 
