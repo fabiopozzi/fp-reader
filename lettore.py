@@ -1,0 +1,1 @@
+from lettore import app
